@@ -24,7 +24,9 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="icon.jpg">
 	<link rel="apple-touch-icon" sizes="114x114" href="icon.jpg">
 	<link rel="apple-touch-icon" href="icon.jpg">
-	<script src="shake.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ios-shake.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.shake.js"></script>
 </head>
 <body class="">
 	<div class="mobile bg-white">
@@ -88,20 +90,22 @@
 			displayStudent();
 		}
 
-		var myShakeEvent = new Shake({
-			threshold: 15, 
-			timeout: 1000
+		$(document).ready(function() {
+			function phoneShake() 
+			{
+				alert('555');
+
+
+			}
+
+			$.shake({
+				callback: function() 
+				{
+					phoneShake();
+				}
+			});
 		});
-		myShakeEvent.start();
-		window.addEventListener('shake', shakeEventDidOccur, false);
-
-//function to call when shake occurs
-function shakeEventDidOccur () {
-
-    //put your own code here etc.
-    randomStudent();
-}
-
+	</script>
 </script>
 </body>
 </html>

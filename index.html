@@ -24,6 +24,7 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="icon.jpg">
 	<link rel="apple-touch-icon" sizes="114x114" href="icon.jpg">
 	<link rel="apple-touch-icon" href="icon.jpg">
+	<script src="shake.js"></script>
 </head>
 <body class="">
 	<div class="mobile bg-white">
@@ -87,6 +88,20 @@
 			displayStudent();
 		}
 
-	</script>
+		var myShakeEvent = new Shake({
+			threshold: 15, 
+			timeout: 1000
+		});
+		myShakeEvent.start();
+		window.addEventListener('shake', shakeEventDidOccur, false);
+
+//function to call when shake occurs
+function shakeEventDidOccur () {
+
+    //put your own code here etc.
+    randomStudent();
+}
+
+</script>
 </body>
 </html>
